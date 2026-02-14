@@ -394,25 +394,27 @@
             font-weight: 700;
         }
 
-        .gallery {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 0 1rem;
-        }
+       .gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
 
-        .photo-card {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(139, 21, 56, 0.15);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            background: linear-gradient(135deg, var(--blush), var(--rose-gold));
-            animation: fade-in-scale 0.6s ease-out backwards;
-        }
+.photo-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(139, 21, 56, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(135deg, var(--blush), var(--rose-gold));
+    animation: fade-in-scale 0.6s ease-out backwards;
+    max-width: 350px;
+    margin: 0 auto;
+}
 
         .photo-card:nth-child(1) { animation-delay: 0.1s; }
         .photo-card:nth-child(2) { animation-delay: 0.2s; }
@@ -635,20 +637,16 @@
 </div>
                 
                 <!-- Funny GIFs - Replace these URLs with GIFs you like! -->
-                <div class="photo-card">
-                    <img src="https://media.giphy.com/media/3o6ZsYq8L7Ljsuf5vi/giphy.gif" alt="Love GIF">
-                    <!-- Romantic hearts GIF -->
-                </div>
-                <div class="photo-card">
-                    <img src="https://media.giphy.com/media/l0HlSz6ebz5zVTGZW/giphy.gif" alt="Cute GIF">
-                    <!-- Cute love GIF -->
-                </div>
-                <div class="photo-card">
-                    <img src="https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif" alt="Funny GIF">
-                    <!-- Funny love GIF -->
-                </div>
-            </div>
-
+              <!-- Our funny GIFs -->
+<div class="photo-card">
+    <img src="vday.gif" alt="Valentine GIF">
+</div>
+<div class="photo-card">
+    <img src="vday2.gif" alt="Valentine GIF">
+</div>
+<div class="photo-card">
+    <img src="vday3.gif" alt="Valentine GIF">
+</div>
             <div class="upload-instruction">
                 <h3>Add Your Photos & GIFs</h3>
                 <p>Replace the photo placeholders with your own images and find funny GIFs on Giphy.com! Just copy the GIF link and paste it in the <code>src=""</code> part.</p>
@@ -733,5 +731,6 @@
     </script>
 </body>
 </html>
+
 
 
