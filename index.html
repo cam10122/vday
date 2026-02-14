@@ -160,55 +160,6 @@
             box-shadow: 0 12px 30px rgba(255, 23, 68, 0.4);
         }
 
-        .btn-no {
-            background: linear-gradient(135deg, #9E9E9E, #757575);
-            color: white;
-            position: absolute;
-            transition: all 0.2s ease;
-        }
-
-        .error-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background: white;
-            padding: 3rem 4rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            text-align: center;
-            border: 4px solid #FF1744;
-        }
-
-        .error-message.show {
-            animation: pop-in 0.5s ease-out forwards;
-        }
-
-        @keyframes pop-in {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
-        .error-message h2 {
-            font-family: 'Pacifico', cursive;
-            font-size: 3rem;
-            color: #FF1744;
-            margin-bottom: 1rem;
-        }
-
-        .error-message p {
-            font-size: 1.5rem;
-            color: #333;
-        }
-
         /* SUCCESS PAGE STYLES */
         .success-page {
             display: none;
@@ -556,15 +507,8 @@
             <h1 class="question-title">Will You Be My Valentine? 💕</h1>
             <div class="buttons-container">
                 <button class="btn btn-yes" id="yesBtn">YES! 💖</button>
-                <button class="btn btn-no" id="noBtn">No</button>
             </div>
         </div>
-    </div>
-
-    <!-- ERROR MESSAGE -->
-    <div class="error-message" id="errorMessage">
-        <h2>Wrong Answer! 😤</h2>
-        <p>Try again! 💔</p>
     </div>
 
     <!-- SUCCESS PAGE -->
@@ -632,40 +576,13 @@
     </div>
 
     <script>
-      <script>
         // Get elements
         const questionPage = document.getElementById('questionPage');
         const successPage = document.getElementById('successPage');
         const mainContent = document.getElementById('mainContent');
         const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const errorMessage = document.getElementById('errorMessage');
         const continueBtn = document.getElementById('continueBtn');
 
-        // Function to move the NO button
-        function moveNoButton() {
-            const x = Math.random() * (window.innerWidth - 200);
-            const y = Math.random() * (window.innerHeight - 100);
-            noBtn.style.left = x + 'px';
-            noBtn.style.top = y + 'px';
-        }
-
-        // Make the NO button run away - works on both desktop AND mobile
-        noBtn.addEventListener('mouseover', moveNoButton);  // Desktop hover
-        noBtn.addEventListener('touchstart', function(e) {   // Mobile touch
-            e.preventDefault();
-            moveNoButton();
-        });
-
-        // When NO button is clicked (if they manage to click it!)
-        noBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            errorMessage.classList.add('show');
-            setTimeout(() => {
-                errorMessage.classList.remove('show');
-            }, 2000);
-            moveNoButton();  // Move it again after they click
-        });
         // When YES button is clicked
         yesBtn.addEventListener('click', function() {
             // Hide question page
@@ -703,4 +620,3 @@
     </script>
 </body>
 </html>
-
